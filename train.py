@@ -302,7 +302,7 @@ def main():
     """Main training function - example usage."""
     
     # Configuration
-    DATA_DIR = './data_organized'  # Updated to use organized data
+    DATA_DIR = './data_organized'  
     BATCH_SIZE = 32
     NUM_EPOCHS = 10
     LEARNING_RATE = 0.001
