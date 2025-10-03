@@ -90,7 +90,8 @@ class Plain34(nn.Module):
                 nn.init.constant_(m.bias, 0)
             elif isinstance(m, nn.Linear):
                 nn.init.normal_(m.weight, 0, 0.01)
-                nn.init.constant_(m.bias, 0)
+                if m.bias is not None:  # Check if bias exists
+                    nn.init.constant_(m.bias, 0)
 
     def forward(self, x):
         x = F.relu(self.bn1(self.conv1(x)))
